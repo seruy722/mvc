@@ -15,9 +15,11 @@ class View {
     }
 
     render(data) {
-        this.elements.list.innerHTML += data.reduce((row, item) => {
+        let {list, input} = this.elements;
+        list.innerHTML = data.reduce((row, item) => {
             console.log(row);
             return row += `<li>${item}<li>`
         },'')
+        input.value = '';
     }
 }
